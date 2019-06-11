@@ -52,10 +52,11 @@ public class ExportExcelCommon {
 //            wf.setVerticalAlignment(VerticalAlignment.CENTRE);
             WritableSheet sheet=null;
             SheetSettings settings=null;
-            for (int i = 0; i <1; i++) {
+            for (int i = 0; i <=1; i++) {
                 sheet = workbook.createSheet("用户信息列表",i);
-                settings=sheet.getSettings();
-                settings.setVerticalFreeze(1);
+                settings=sheet.getSettings(); //设置原Sheet打印属性到新Sheet页
+//              settings.setHorizontalFreeze(2);//冻结前两行
+                settings.setVerticalFreeze(1);//垂直冻结第一行
                 //添加第一行标题
                 int o=0;
                 for (Map.Entry<Integer, Object> entrys : map.entrySet()) {
